@@ -90,17 +90,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="ChaseState.cpp" />
     <ClCompile Include="IBehaviour.cpp" />
+    <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="KeyboardController.cpp" />
+    <ClCompile Include="PatrolState.cpp" />
     <ClCompile Include="Seek.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Tute01_AgentsApp.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="ChaseState.h" />
     <ClInclude Include="IBehaviour.h" />
+    <ClInclude Include="AttackState.h" />
     <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="PatrolState.h" />
     <ClInclude Include="Seek.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Tute01_AgentsApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

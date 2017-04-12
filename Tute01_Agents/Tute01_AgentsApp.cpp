@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "KeyboardController.h"
 #include "Seek.h"
+#include "PatrolState.h"
 
 Tute01_AgentsApp::Tute01_AgentsApp() {
 
@@ -20,10 +21,14 @@ bool Tute01_AgentsApp::startup() {
 
 	m_Player = new Agent("./textures/player.gif", glm::vec2(100, 100));
 	m_Player->AddBehaviour(new KeyboardController(aie::Input::getInstance()));
+	m_Player->setMaxSpeed(200.0f);
 
 	m_Enemy = new Agent("./textures/eye.gif", glm::vec2(500, 700));
-	m_Enemy->AddBehaviour(new Seek(m_Player));
-	m_Enemy->setMaxSpeed(60.0f);
+	m_Enemy->InitSM();
+	m_Enemy->setTarget(m_Player);
+	m_Enemy->SetState(new PatrolState());
+	//m_Enemy->AddBehaviour(new Seek(m_Player));
+	m_Enemy->setMaxSpeed(120.0f);
 
 
 	return true;
